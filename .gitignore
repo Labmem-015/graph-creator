@@ -1,0 +1,19 @@
+# IDEs, Editors and Tools
+.vs/
+.vscode
+*.sublime-*
+
+# Python
+__pycache__
+.pytest_cache
+
+# Build Artifacts
+build/
+out/
+bin/
+install
+.cache
+
+# CMake
+CMakeUserPresets.json
+
