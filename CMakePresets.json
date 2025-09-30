@@ -20,7 +20,8 @@
 			"cacheVariables": {
 				"CMAKE_CXX_SCAN_FOR_MODULES": false,
 				"CMAKE_EXPORT_COMPILE_COMMANDS": true,
-				"CMAKE_VERBOSE_MAKEFILE": false
+				"CMAKE_VERBOSE_MAKEFILE": false,
+				"CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
 			}
 		},
 		{
@@ -30,6 +31,14 @@
 			"cacheVariables": {
 				"CMAKE_BUILD_TYPE": "Debug"
 			}
+		},
+		{
+			"name": "release",
+			"displayName": "Release",
+			"inherits": "default",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Release"
+			}
 		}
 	],
 	"buildPresets": [
@@ -37,6 +46,11 @@
 			"name": "debug",
 			"displayName": "Debug",
 			"configurePreset": "debug"
+		},
+		{
+			"name": "release",
+			"displayName": "Release",
+			"configurePreset": "release"
 		}
 	],
 	"workflowPresets": [
@@ -49,6 +63,19 @@
 				},
 				{
 					"name": "debug",
+					"type": "build"
+				}
+			]
+		},
+		{
+			"name": "release",
+			"steps": [
+				{
+					"name": "release",
+					"type": "configure"
+				},
+				{
+					"name": "release",
 					"type": "build"
 				}
 			]

@@ -1,6 +1,6 @@
 # About the project
 
-This project is used for creating and visualizing graphs
+This project is used for creating and visualizing graphs. Short name: Gratòr.
 
 # How to build
 
