@@ -23,3 +23,13 @@ cmake --workflow debug
 `Graph` is used for managing `Node`s.
 
 `Matrix` is used for parsing and giving a transition matrix of Markov Chain.
+
+# TODO
+
+1. Implement simple graph rendering
+2. Implement parsing data
+3. Implement building graph
+4. Implement graph shared library runtime loading in main executable to debug without restarting app.
+5. Implement physics of graph (make it interactive like in obsidian)
+6. Implement optimizations to handle larger graphs
+7. Make it crossplatform (build on Windows also).
