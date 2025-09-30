@@ -12,13 +12,20 @@ project(graph-creator DESCRIPTION "Graph Creator" VERSION 0.1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_C_STANDARD 23)
 
+file(GLOB hpp_files CONFIGURE_DEPENDS src/*.hpp)
+file(GLOB cpp_files CONFIGURE_DEPENDS src/*.cpp)
+
 # TODO: Rename repo to "graph-builder" or "grator"
-add_executable(graph_creator src/main.cpp)
+add_executable(graph_creator ${hpp_files} ${cpp_files})
 target_precompile_headers(graph_creator PUBLIC src/main.hpp)
 
 find_package(raylib CONFIG REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
 target_link_libraries(graph_creator raylib glfw)
+
+if(EXISTS "${PROJECT_SOURCE_DIR}/snippets/")
+    add_subdirectory(snippets)
+endif()
 
 # This is for clangd support. You can comment those lines if you don't use clangd
 # Check if the file exists
