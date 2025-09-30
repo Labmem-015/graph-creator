@@ -15,3 +15,11 @@ Or this command to build debug:
 ```
 cmake --workflow debug
 ```
+
+# What is happening in the code
+
+`Node` class is used for rendering a single Node.
+
+`Graph` is used for managing `Node`s.
+
+`Matrix` is used for parsing and giving a transition matrix of Markov Chain.
